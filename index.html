@@ -8,51 +8,148 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0b0b0b;
   color: #f5c400;
+  background: #0b0b0b;
+  overflow-x: hidden;
 }
 
+/* 💨 dymové animované pozadie */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 20%, rgba(245,196,0,0.08), transparent 40%),
+              radial-gradient(circle at 80% 60%, rgba(255,255,255,0.05), transparent 50%);
+  animation: smoke 8s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes smoke {
+  from { transform: scale(1); opacity: 0.6; }
+  to { transform: scale(1.1); opacity: 0.9; }
+}
+
+/* HEADER */
 header {
   text-align: center;
   padding: 40px 20px;
   background: #000;
   border-bottom: 2px solid #f5c400;
+  box-shadow: 0 0 20px #f5c40022;
 }
 
 header img {
   width: 140px;
-  max-width: 100%;
+  filter: drop-shadow(0 0 10px #f5c400);
 }
 
 h1 {
   margin: 10px 0 5px;
+  text-shadow: 0 0 10px #f5c400;
 }
 
+/* HERO AUTÁ */
+.hero {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.glow-text {
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #f5c400, 0 0 20px #f5c400;
+}
+
+.cars {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.cars img {
+  width: 180px;
+  border-radius: 10px;
+  border: 2px solid #f5c400;
+  box-shadow: 0 0 15px #000;
+  transition: 0.3s;
+}
+
+.cars img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #f5c400;
+}
+
+/* SEKCIE */
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
   padding: 20px;
 }
 
 .card {
-  background: #141414;
+  background: rgba(20,20,20,0.9);
   border-left: 4px solid #f5c400;
   padding: 20px;
   margin: 20px 0;
   border-radius: 10px;
+  box-shadow: 0 0 10px #000;
 }
 
-.button {
-  display: inline-block;
-  padding: 12px 18px;
+/* GALÉRIA */
+.gallery-box {
+  cursor: pointer;
+  text-align: center;
+  padding: 30px;
+  border: 2px dashed #f5c400;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.gallery-box:hover {
+  background: rgba(245,196,0,0.05);
+}
+
+/* FORM */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px;
+  width: 100%;
   background: #f5c400;
   color: #000;
   font-weight: bold;
-  text-decoration: none;
+  border: none;
   border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 0 15px #f5c400;
+}
+
+/* CENNÍK */
+.price {
+  list-style: none;
+  padding: 0;
+}
+
+.price li {
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
 }
 </style>
-
 </head>
 
 <body>
@@ -62,33 +159,53 @@ h1 {
   <h1>Doctor Paleto Garage</h1>
 </header>
 
+<!-- HERO -->
+<div class="hero">
+  <div class="glow-text">AUTOSERVIS & TUNING</div>
+
+  <div class="cars">
+    <img src="car1.png">
+    <img src="car2.png">
+    <img src="car3.png">
+    <img src="car4.png">
+  </div>
+</div>
+
 <div class="container">
 
+  <!-- GALÉRIA (ZATIAĽ PRÁZDNA) -->
   <div class="card">
-    <h2>🔧 Služby</h2>
-    <ul>
-      <li>Opravy vozidiel</li>
-      <li>Diagnostika</li>
-      <li>Tuning</li>
-      <li>Odtah</li>
-    </ul>
+    <h2>📸 Galéria vozidiel</h2>
+    <div class="gallery-box">
+      Klikni sem – galéria bude doplnená čoskoro
+    </div>
   </div>
 
+  <!-- CENNÍK -->
   <div class="card">
     <h2>💰 Cenník</h2>
-    <ul>
+    <ul class="price">
       <li>🛞 Kolesá – 4 000 $</li>
       <li>🚪 Dvere – 4 000 $</li>
       <li>🧰 Fixboxy – 5 000 $</li>
     </ul>
   </div>
 
+  <!-- FORMULÁR -->
   <div class="card">
-    <h2>🚗 Objednávky</h2>
-    <p>Objednaj si servis alebo čistenie vozidla.</p>
+    <h2>📋 Objednávka servisu</h2>
 
-    <a class="button" href="#">Objednať prehliadku</a><br><br>
-    <a class="button" href="#">Objednať čistenie</a>
+    <input placeholder="Meno klienta">
+    <input placeholder="Typ vozidla">
+
+    <select>
+      <option>Vyber službu</option>
+      <option>Oprava vozidla</option>
+      <option>Kompletné čistenie</option>
+      <option>Tuning</option>
+    </select>
+
+    <button>Odoslať požiadavku</button>
   </div>
 
 </div>
