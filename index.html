@@ -5,6 +5,38 @@
 <title>Doctor Paleto Garage</title>
 
 <style>
+  .hero {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.glow-text {
+  font-size: 32px;
+  font-weight: bold;
+  color: #f5c400;
+  text-shadow: 0 0 10px #f5c400, 0 0 20px #f5c400;
+}
+
+.cars-track {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.cars-track img {
+  width: 200px;
+  border-radius: 10px;
+  border: 2px solid #f5c400;
+  box-shadow: 0 0 15px #000;
+  transition: 0.3s;
+}
+
+.cars-track img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #f5c400;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
