@@ -5,38 +5,6 @@
 <title>Doctor Paleto Garage</title>
 
 <style>
-  .hero {
-  text-align: center;
-  padding: 30px 10px;
-}
-
-.glow-text {
-  font-size: 32px;
-  font-weight: bold;
-  color: #f5c400;
-  text-shadow: 0 0 10px #f5c400, 0 0 20px #f5c400;
-}
-
-.cars-track {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-.cars-track img {
-  width: 200px;
-  border-radius: 10px;
-  border: 2px solid #f5c400;
-  box-shadow: 0 0 15px #000;
-  transition: 0.3s;
-}
-
-.cars-track img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #f5c400;
-}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -44,36 +12,24 @@ body {
   color: #f5c400;
 }
 
-<div class="hero">
-  <div class="glow-text">AUTOSERVIS DOCTOR PALETO GARAGE</div>
-  <p>Profesionálny servis a tuning vozidiel</p>
-
-  <div class="cars-track">
-    <img src="car1.png">
-    <img src="car2.png">
-    <img src="car3.png">
-    <img src="car4.png">
-  </div>
-</div>
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: #000;
+  border-bottom: 2px solid #f5c400;
 }
 
 header img {
-  width: 150px;
-  filter: drop-shadow(0 0 10px #f5c400);
+  width: 140px;
+  max-width: 100%;
 }
 
 h1 {
   margin: 10px 0 5px;
-  font-size: 36px;
-}
-
-.subtitle {
-  color: #aaa;
-  font-size: 14px;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 900px;
   margin: auto;
   padding: 20px;
 }
@@ -84,11 +40,6 @@ h1 {
   padding: 20px;
   margin: 20px 0;
   border-radius: 10px;
-  box-shadow: 0 0 10px #000;
-}
-
-h2 {
-  margin-top: 0;
 }
 
 .button {
@@ -99,31 +50,16 @@ h2 {
   font-weight: bold;
   text-decoration: none;
   border-radius: 6px;
-  margin-top: 10px;
-  transition: 0.2s;
 }
-
-.button:hover {
-  transform: scale(1.05);
-}
-
-footer {
-  text-align: center;
-  padding: 15px;
-  color: #666;
-  border-top: 1px solid #222;
-  margin-top: 30px;
-}
-
 </style>
+
 </head>
 
 <body>
 
 <header>
-  <img src="logo.png" alt="Doctor Paleto Garage">
+  <img src="logo.png" alt="logo">
   <h1>Doctor Paleto Garage</h1>
-  <div class="subtitle">Autoservis Doctor Paleto Garage</div>
 </header>
 
 <div class="container">
@@ -131,39 +67,31 @@ footer {
   <div class="card">
     <h2>🔧 Služby</h2>
     <ul>
-      <li>Opravy vozidiel všetkých typov</li>
-      <li>Diagnostika a kontrola motora</li>
-      <li>Úpravy a tuning vozidiel</li>
-      <li>Odtahová služba</li>
-      <li>Pravidelný servis a údržba</li>
+      <li>Opravy vozidiel</li>
+      <li>Diagnostika</li>
+      <li>Tuning</li>
+      <li>Odtah</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>🏢 O nás</h2>
-    <p>
-      Autoservis Doctor Paleto Garage poskytuje profesionálnu starostlivosť o všetky vozidlá.
-      Zameriavame sa na rýchlosť, kvalitu a spoľahlivosť služieb.
-    </p>
+    <h2>💰 Cenník</h2>
+    <ul>
+      <li>🛞 Kolesá – 4 000 $</li>
+      <li>🚪 Dvere – 4 000 $</li>
+      <li>🧰 Fixboxy – 5 000 $</li>
+    </ul>
   </div>
 
   <div class="card">
-    <h2>📋 Objednávky</h2>
-    <p>
-      Pre objednanie služby alebo servisného zásahu použite online formulár.
-      Náš tím vás bude kontaktovať čo najskôr.
-    </p>
+    <h2>🚗 Objednávky</h2>
+    <p>Objednaj si servis alebo čistenie vozidla.</p>
 
-    <a class="button" href="https://TVOJ-FORMULAR-LINK.com">
-      Otvoriť formulár
-    </a>
+    <a class="button" href="#">Objednať prehliadku</a><br><br>
+    <a class="button" href="#">Objednať čistenie</a>
   </div>
 
 </div>
-
-<footer>
-  © Doctor Paleto Garage
-</footer>
 
 </body>
 </html>
