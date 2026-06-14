@@ -5,79 +5,37 @@
 <title>Doctor Paleto Garage</title>
 
 <style>
-.carousel {
-  overflow: hidden;
-  width: 100%;
-  padding: 20px 0;
-  margin-top: 20px;
-}
-
-.track {
-  display: flex;
-  width: max-content;
-  animation: scrollCars 10s linear infinite;
-  gap: 20px;
-}
-
-.car {
-  min-width: 220px;
-  height: 120px;
-  background: #141414;
-  border: 2px solid #f5c400;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  box-shadow: 0 0 15px #000;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
   color: #f5c400;
-  font-weight: bold;
+  overflow-x: hidden;
 }
 
-@keyframes scrollCars {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* 🌫️ dymové vrstvy */
-body::before,
-body::after {
+/* 🌫️ stabilný “dym” efekt */
+body::before {
   content: "";
   position: fixed;
-  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
-  background: radial-gradient(circle at 30% 30%, rgba(245,196,0,0.08), transparent 40%),
-              radial-gradient(circle at 70% 60%, rgba(255,255,255,0.05), transparent 50%),
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(245,196,0,0.08), transparent 40%),
+              radial-gradient(circle at 80% 60%, rgba(255,255,255,0.05), transparent 50%),
               radial-gradient(circle at 50% 80%, rgba(245,196,0,0.04), transparent 60%);
-  animation: smokeMove 12s infinite linear;
+  animation: smoke 10s infinite alternate;
   z-index: -1;
 }
 
-body::after {
-  animation-direction: reverse;
-  opacity: 0.7;
-}
-
-@keyframes smokeMove {
-  0% { transform: translate(0,0) scale(1); }
-  50% { transform: translate(50px, -30px) scale(1.1); }
-  100% { transform: translate(0,0) scale(1); }
+@keyframes smoke {
+  from { transform: scale(1); opacity: 0.6; }
+  to { transform: scale(1.08); opacity: 0.9; }
 }
 
 /* HEADER */
 header {
   text-align: center;
-  padding: 40px 20px;
+  padding: 35px 20px;
   background: #000;
   border-bottom: 2px solid #f5c400;
-  box-shadow: 0 0 20px #f5c40022;
-}
-
-header img {
-  width: 140px;
-  filter: drop-shadow(0 0 10px #f5c400);
 }
 
 h1 {
@@ -85,44 +43,40 @@ h1 {
   text-shadow: 0 0 10px #f5c400;
 }
 
-/* HERO AUTÁ */
-<div class="carousel">
-  <div class="track">
-    <div class="car">🚗 Tuning Auto 1</div>
-    <div class="car">🏎️ Tuning Auto 2</div>
-    <div class="car">🚙 Tuning Auto 3</div>
-    <div class="car">🚘 Tuning Auto 4</div>
-  </div>
-</div>
-
-.glow-text {
-  font-size: 28px;
-  font-weight: bold;
-  text-shadow: 0 0 10px #f5c400, 0 0 20px #f5c400;
-}
-
-.cars {
+/* SHOWROOM AUTÁ (bez obrázkov) */
+.showroom {
   display: flex;
-  justify-content: center;
   gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 20px 0;
 }
 
-.cars img {
-  width: 180px;
-  border-radius: 10px;
+.track {
+  display: flex;
+  gap: 15px;
+  animation: move 12s linear infinite;
+}
+
+.car {
+  min-width: 200px;
+  height: 110px;
+  background: #141414;
   border: 2px solid #f5c400;
-  box-shadow: 0 0 15px #000;
-  transition: 0.3s;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 0 10px #000;
 }
 
-.cars img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #f5c400;
+@keyframes move {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-/* SEKCIE */
+/* CONTENT */
 .container {
   max-width: 1000px;
   margin: auto;
@@ -130,26 +84,30 @@ h1 {
 }
 
 .card {
-  background: rgba(20,20,20,0.9);
+  background: #141414;
   border-left: 4px solid #f5c400;
   padding: 20px;
   margin: 20px 0;
   border-radius: 10px;
-  box-shadow: 0 0 10px #000;
 }
 
 /* GALÉRIA */
-.gallery-box {
-  cursor: pointer;
-  text-align: center;
-  padding: 30px;
+.gallery {
   border: 2px dashed #f5c400;
+  padding: 25px;
+  text-align: center;
   border-radius: 10px;
-  transition: 0.3s;
 }
 
-.gallery-box:hover {
-  background: rgba(245,196,0,0.05);
+/* TABUĽKA */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #333;
 }
 
 /* FORM */
@@ -157,93 +115,88 @@ input, select {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  border-radius: 6px;
-  border: none;
 }
 
 button {
-  margin-top: 15px;
-  padding: 12px;
   width: 100%;
+  padding: 12px;
+  margin-top: 15px;
   background: #f5c400;
-  color: #000;
-  font-weight: bold;
   border: none;
-  border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  box-shadow: 0 0 15px #f5c400;
-}
-
-/* CENNÍK */
-.price {
-  list-style: none;
-  padding: 0;
-}
-
-.price li {
-  padding: 8px 0;
-  border-bottom: 1px solid #333;
+  box-shadow: 0 0 10px #f5c400;
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
-  <img src="logo.png" alt="logo">
   <h1>Doctor Paleto Garage</h1>
 </header>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="glow-text">AUTOSERVIS & TUNING</div>
-
-  <div class="cars">
-    <img src="car1.png">
-    <img src="car2.png">
-    <img src="car3.png">
-    <img src="car4.png">
+<!-- 🚗 SHOWROOM -->
+<div class="showroom">
+  <div class="track">
+    <div class="car">🚗 Tuning 01</div>
+    <div class="car">🏎️ Tuning 02</div>
+    <div class="car">🚙 Tuning 03</div>
+    <div class="car">🚘 Tuning 04</div>
+    <div class="car">🚗 Tuning 05</div>
   </div>
 </div>
 
 <div class="container">
 
-  <!-- GALÉRIA (ZATIAĽ PRÁZDNA) -->
+  <!-- GALÉRIA -->
   <div class="card">
     <h2>📸 Galéria vozidiel</h2>
-    <div class="gallery-box">
-      Klikni sem – galéria bude doplnená čoskoro
+    <div class="gallery">
+      Galéria bude doplnená čoskoro
     </div>
   </div>
 
-  <!-- CENNÍK -->
+  <!-- CENNÍK OPRÁV -->
   <div class="card">
-    <h2>💰 Cenník</h2>
-    <ul class="price">
-      <li>🛞 Kolesá – 4 000 $</li>
-      <li>🚪 Dvere – 4 000 $</li>
-      <li>🧰 Fixboxy – 5 000 $</li>
-    </ul>
+    <h2>💰 Cenník opráv</h2>
+    <table>
+      <tr><td>🛞 Kolesá</td><td>4 000 $</td></tr>
+      <tr><td>🚪 Dvere</td><td>4 000 $</td></tr>
+      <tr><td>🧰 Fixboxy</td><td>5 000 $</td></tr>
+    </table>
+  </div>
+
+  <!-- 🚛 ODŤAH -->
+  <div class="card">
+    <h2>🚛 Cenník odťahov</h2>
+    <table>
+      <tr><td>📍 Paleto</td><td>FREE</td></tr>
+      <tr><td>📍 Sandy Shores</td><td>FREE</td></tr>
+      <tr><td>📍 Grapeseed</td><td>FREE</td></tr>
+      <tr><td>🌆 Celé mesto</td><td>5 000 $</td></tr>
+    </table>
   </div>
 
   <!-- FORMULÁR -->
   <div class="card">
     <h2>📋 Objednávka servisu</h2>
 
-    <input placeholder="Meno klienta">
-    <input placeholder="Typ vozidla">
+    <input placeholder="Meno">
+    <input placeholder="Vozidlo">
 
     <select>
       <option>Vyber službu</option>
-      <option>Oprava vozidla</option>
-      <option>Kompletné čistenie</option>
+      <option>Oprava</option>
+      <option>Čistenie</option>
       <option>Tuning</option>
     </select>
 
-    <button>Odoslať požiadavku</button>
+    <button>Odoslať</button>
   </div>
 
 </div>
