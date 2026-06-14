@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-/* 🌫️ stabilný “dym” efekt */
+/* SMOKE */
 body::before {
   content: "";
   position: fixed;
@@ -39,41 +39,46 @@ header {
 }
 
 h1 {
-  margin: 10px 0 5px;
+  margin: 0;
   text-shadow: 0 0 10px #f5c400;
 }
 
-/* SHOWROOM AUTÁ (bez obrázkov) */
+header p {
+  margin-top: 8px;
+  color: #aaa;
+}
+
+/* SHOWROOM */
 .showroom {
   display: flex;
-  gap: 15px;
   overflow: hidden;
-  white-space: nowrap;
   padding: 20px 0;
 }
 
 .track {
   display: flex;
   gap: 15px;
-  animation: move 12s linear infinite;
-}
-
-.car {
-  min-width: 200px;
-  height: 110px;
-  background: #141414;
-  border: 2px solid #f5c400;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  box-shadow: 0 0 10px #000;
+  animation: move 18s linear infinite;
 }
 
 @keyframes move {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+.car {
+  min-width: 260px;
+  height: 140px;
+  border: 2px solid #f5c400;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #000;
+}
+
+.car img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* CONTENT */
@@ -91,15 +96,7 @@ h1 {
   border-radius: 10px;
 }
 
-/* GALÉRIA */
-.gallery {
-  border: 2px dashed #f5c400;
-  padding: 25px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-/* TABUĽKA */
+/* TABLE */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -115,6 +112,9 @@ input, select {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
+  background: #0b0b0b;
+  border: 1px solid #f5c400;
+  color: #f5c400;
 }
 
 button {
@@ -137,31 +137,44 @@ button:hover {
 <body>
 
 <header>
-  <h1>Doctor Paleto Garage</h1>
+  <h1>🚗 Doctor Paleto Garage</h1>
+  <p>Los Santos tuning & repair shop</p>
 </header>
 
-<!-- 🚗 SHOWROOM -->
+<!-- SHOWROOM GTA AUTÁ -->
 <div class="showroom">
   <div class="track">
-    <div class="car">🚗 Tuning 01</div>
-    <div class="car">🏎️ Tuning 02</div>
-    <div class="car">🚙 Tuning 03</div>
-    <div class="car">🚘 Tuning 04</div>
-    <div class="car">🚗 Tuning 05</div>
+
+    <div class="car">
+      <img src="https://i.imgur.com/7Q9QY3R.jpg">
+    </div>
+
+    <div class="car">
+      <img src="https://i.imgur.com/2QbZ2cO.jpg">
+    </div>
+
+    <div class="car">
+      <img src="https://i.imgur.com/8kQZx1M.jpg">
+    </div>
+
+    <div class="car">
+      <img src="https://i.imgur.com/5rQxG7P.jpg">
+    </div>
+
+    <div class="car">
+      <img src="https://i.imgur.com/9dVtK3A.jpg">
+    </div>
+
   </div>
 </div>
 
 <div class="container">
 
-  <!-- GALÉRIA -->
   <div class="card">
     <h2>📸 Galéria vozidiel</h2>
-    <div class="gallery">
-      Galéria bude doplnená čoskoro
-    </div>
+    <p>GTA V tuning garage showcase</p>
   </div>
 
-  <!-- CENNÍK OPRÁV -->
   <div class="card">
     <h2>💰 Cenník opráv</h2>
     <table>
@@ -171,18 +184,15 @@ button:hover {
     </table>
   </div>
 
-  <!-- 🚛 ODŤAH -->
   <div class="card">
     <h2>🚛 Cenník odťahov</h2>
     <table>
       <tr><td>📍 Paleto</td><td>FREE</td></tr>
       <tr><td>📍 Sandy Shores</td><td>FREE</td></tr>
-      <tr><td>📍 Grapeseed</td><td>FREE</td></tr>
-      <tr><td>🌆 Celé mesto</td><td>5 000 $</td></tr>
+      <tr><td>🌆 Mesto</td><td>5 000 $</td></tr>
     </table>
   </div>
 
-  <!-- FORMULÁR -->
   <div class="card">
     <h2>📋 Objednávka servisu</h2>
 
@@ -196,7 +206,9 @@ button:hover {
       <option>Tuning</option>
     </select>
 
-    <button>Odoslať</button>
+    <button onclick="alert('Objednávka odoslaná 🚗💨')">
+      Odoslať
+    </button>
   </div>
 
 </div>
