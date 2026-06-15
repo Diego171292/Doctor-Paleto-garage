@@ -2,254 +2,214 @@
 <html lang="sk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Doctor Paleto Garage</title>
 
+<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
-
-body{
-    margin:0;
-    background:#0b0b0b;
-    color:#f5c400;
-    font-family:'Roboto',sans-serif;
+body {
+  margin: 0;
+  background: #0b0b0b;
+  color: #f5c400;
+  font-family: "Roboto", sans-serif;
 }
 
 /* HEADER */
-
-header{
-    background:#000;
-    text-align:center;
-    padding:40px 20px;
-    border-bottom:2px solid #f5c400;
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: #000;
+  border-bottom: 2px solid #f5c400;
 }
 
-header img{
-    width:150px;
-    height:auto;
-    filter:drop-shadow(0 0 10px #f5c400);
+header img {
+  width: 140px;
+  filter: drop-shadow(0 0 10px #f5c400);
 }
 
-h1{
-    font-family:'Oswald',sans-serif;
-    font-size:42px;
-    margin:15px 0 5px;
-    letter-spacing:2px;
-    text-transform:uppercase;
+h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  margin: 10px 0 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.subtitle{
-    color:#aaa;
-    font-size:14px;
-    letter-spacing:1px;
+.subtitle {
+  color: #aaa;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 
 /* AUTÁ */
-
-.car-showcase{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-    padding:25px;
+.car-showcase {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
 }
 
-.car-showcase img{
-    width:220px;
-    height:130px;
-    object-fit:cover;
-    border:2px solid #f5c400;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.5);
+.car-showcase img {
+  width: 220px;
+  height: 130px;
+  object-fit: cover;
+  border: 2px solid #f5c400;
+  border-radius: 10px;
 }
 
-/* OBSAH */
-
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:20px;
+/* CONTAINER */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
 }
 
-.card{
-    background:#141414;
-    border-left:5px solid #f5c400;
-    padding:20px;
-    margin-bottom:20px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.4);
+/* KARTY */
+.card {
+  background: #141414;
+  border-left: 5px solid #f5c400;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
 }
 
-.card h2{
-    margin-top:0;
-    font-family:'Oswald',sans-serif;
-    letter-spacing:1px;
+/* NADPISY */
+h2 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0;
 }
 
-.card p{
-    line-height:1.7;
-    color:#ddd;
+/* ZVÝRAZNENIE TEXTU */
+.highlight {
+  color: #fff;
+  font-weight: 700;
 }
 
-strong{
-    color:white;
+/* LIST */
+ul {
+  padding-left: 20px;
 }
 
-ul{
-    padding-left:20px;
+li {
+  margin: 6px 0;
 }
 
-li{
-    margin:8px 0;
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-table{
-    width:100%;
-    border-collapse:collapse;
+td {
+  padding: 10px;
+  border-bottom: 1px solid #333;
 }
 
-td{
-    padding:12px;
-    border-bottom:1px solid #333;
+/* TEXT */
+p {
+  line-height: 1.7;
+  color: #ddd;
 }
 
-footer{
-    text-align:center;
-    color:#777;
-    padding:25px;
+strong {
+  color: #fff;
 }
 
+/* SMALL DETAIL */
+.badge {
+  display: inline-block;
+  background: #f5c400;
+  color: #000;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-
-    <img src="logo.png" alt="Doctor Paleto Garage">
-
-    <h1>Doctor Paleto Garage</h1>
-
-    <div class="subtitle">
-        Autoservis • Tuning • Odťahová služba
-    </div>
-
+  <img src="logo.png" alt="Doctor Paleto Garage">
+  <h1>Doctor Paleto Garage</h1>
+  <div class="subtitle">Autoservis • Tuning • Odtahová služba</div>
 </header>
 
 <!-- AUTÁ -->
-
 <div class="car-showcase">
-
-    <img src="car1.png" alt="Vozidlo 1">
-    <img src="car2.png" alt="Vozidlo 2">
-    <img src="car3.png" alt="Vozidlo 3">
-    <img src="car4.png" alt="Vozidlo 4">
-
+  <img src="car1.png">
+  <img src="car2.png">
+  <img src="car3.png">
+  <img src="car4.png">
 </div>
 
 <div class="container">
 
-    <!-- O NÁS -->
+  <!-- CENNÍK -->
+  <div class="card">
+    <h2>🔧 Cenník služieb</h2>
+    <ul>
+      <li><span class="highlight">🛞 Kolesá</span> – 4 000 $</li>
+      <li><span class="highlight">🚪 Dvere</span> – 4 000 $</li>
+      <li><span class="highlight">🧰 Fixboxy</span> – 5 000 $</li>
+    </ul>
+  </div>
 
-    <div class="card">
+  <!-- ODŤAHY -->
+  <div class="card">
+    <h2>🚛 Cenník odťahov</h2>
+    <table>
+      <tr><td>Oblasť Paleto</td><td><strong>FREE</strong></td></tr>
+      <tr><td>Oblasť Sandy Shores</td><td><strong>FREE</strong></td></tr>
+      <tr><td>Oblasť Grapeseed</td><td><strong>FREE</strong></td></tr>
+      <tr><td>Oblasť Mesto</td><td><strong>5 000 $</strong></td></tr>
+    </table>
+  </div>
 
-        <h2>:office: O nás</h2>
+  <!-- OTVÁRACIA DOBA -->
+  <div class="card">
+    <h2>⏰ Otváracia doba</h2>
+    <p>
+      <span class="badge">INFO</span><br><br>
+      Neexistuje! Vieš prečo? Lebo keď sme <strong>OPEN</strong>, tak sme OPEN!<br><br>
+      A keď nie, zavolaj nám a prídeme s radosťou.
+    </p>
+  </div>
 
-        <p>
-            <strong>Doctor Paleto Garage</strong> je rodinne založený servis,
-            kde si navzájom pomáhame a hlavne pomáhame vám zákazníkom.
-        </p>
+  <!-- O NÁS -->
+  <div class="card">
+    <h2>🏢 O nás</h2>
 
-        <p>
-            Dielňa <strong>Doctor Paleto Garage</strong> slúži ako hlavná tuningová
-            stanica na severe mapy. Ide o nezávislú prevádzku,
-            ktorá ponúka rovnaké možnosti úprav ako v celom meste.
-        </p>
+    <p>
+      <strong>Doctor Paleto Garage</strong> je rodinne založený servis, kde si navzájom pomáhame a hlavne pomáhame vám – zákazníkom.
+    </p>
 
-        <p>
-            Mechanici vás radi obslúžia, podebatujú a odídete ešte
-            s lepšou náladou ako ste prišli.
-        </p>
+    <p>
+      Dielňa slúži ako hlavná <strong>tuningová stanica na severe mapy</strong>.
+      Ide o nezávislú prevádzku s rovnakými možnosťami úprav ako v meste.
+    </p>
 
-        <p>
-            Neváhajte a zastavte sa.
-        </p>
+    <p>
+      Mechanici vás radi obslúžia, poradia a odídete vždy s lepšou náladou.
+    </p>
 
-        <p>
-            S pozdravom,<br>
-            <strong>Doctor Paleto
-Garage</strong>
-        </p>
+    <p>
+      Sídlo:<br>
+      <strong>Great Ocean Highway 041</strong><br><br>
 
-    </div>
+      Zodpovedný pracovník:<br>
+      <strong>Diego Rodrigez</strong>
+    </p>
 
-    <!-- CENNÍK OPRÁV -->
+  </div>
 
-    <div class="card">
+</div>
 
-        <h2>:wrench: Cenník opráv</h2>
-
-        <ul>
-            <li><strong>:wheel: Kolesá</strong> – 4 000 $</li>
-            <li><strong>:door: Dvere</strong> – 4 000 $</li>
-            <li><strong>:toolbox: Fixboxy</strong> – 5 000 $</li>
-        </ul>
-
-    </div>
-
-    <!-- ODŤAHY -->
-
-    <div class="card">
-
-        <h2>:articulated_lorry: Cenník odťahov</h2>
-
-        <table>
-            <tr>
-                <td><strong>Oblasť Paleto</strong></td>
-                <td><strong>FREE</strong></td>
-            </tr>
-
-            <tr>
-                <td><strong>Oblasť Sandy Shores</strong></td>
-                <td><strong>FREE</strong></td>
-            </tr>
-
-            <tr>
-                <td><strong>Oblasť Grapeseed</strong></td>
-                <td><strong>FREE</strong></td>
-            </tr>
-
-            <tr>
-                <td><strong>Oblasť Mesto</strong></td>
-                <td><strong>5 000 $</strong></td>
-            </tr>
-        </table>
-
-    </div>
-
-    <!-- OTVÁRACIA DOBA -->
-
-    <div class="card">
-
-        <h2>:alarm_clock: Otváracia doba</h2>
-
-        <p>
-            Neexistuje! Vieš prečo?
-            Lebo keď sme <strong>OPEN</strong>, tak sme OPEN!
-        </p>
-
-        <p>
-            A keď nie, tak zavolaj a my s radosťou prídeme.
-        </p>
-
-    </div>
-
-    <!-- SÍDLO -->
-
-    <div class="card">
-
-        <h2>:round_pushpin: Sídlo firmy</h2>
-
-        <p>
-            <strong>S
+</body>
+</html>
