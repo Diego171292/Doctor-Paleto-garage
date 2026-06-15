@@ -12,15 +12,17 @@ body {
   color: #f5c400;
 }
 
+/* HEADER */
 header {
   text-align: center;
   padding: 40px 20px;
-  border-bottom: 2px solid #f5c400;
   background: #000;
+  border-bottom: 2px solid #f5c400;
 }
 
 header img {
   width: 150px;
+  height: auto;
   filter: drop-shadow(0 0 10px #f5c400);
 }
 
@@ -34,6 +36,24 @@ h1 {
   font-size: 14px;
 }
 
+/* AUTÁ POD LOGOM */
+.car-showcase {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+}
+
+.car-showcase img {
+  width: 220px;
+  height: 130px;
+  object-fit: cover;
+  border: 2px solid #f5c400;
+  border-radius: 10px;
+}
+
+/* CONTAINER */
 .container {
   max-width: 1000px;
   margin: auto;
@@ -46,37 +66,27 @@ h1 {
   padding: 20px;
   margin: 20px 0;
   border-radius: 10px;
-  box-shadow: 0 0 10px #000;
 }
 
 h2 {
   margin-top: 0;
 }
 
-.button {
-  display: inline-block;
-  padding: 12px 18px;
-  background: #f5c400;
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-top: 10px;
-  transition: 0.2s;
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.button:hover {
-  transform: scale(1.05);
+td {
+  padding: 10px;
+  border-bottom: 1px solid #333;
 }
 
-footer {
-  text-align: center;
-  padding: 15px;
-  color: #666;
-  border-top: 1px solid #222;
-  margin-top: 30px;
+/* TEXT */
+p {
+  line-height: 1.6;
 }
-
 </style>
 </head>
 
@@ -85,47 +95,69 @@ footer {
 <header>
   <img src="logo.png" alt="Doctor Paleto Garage">
   <h1>Doctor Paleto Garage</h1>
-  <div class="subtitle">Autoservis Doctor Paleto Garage</div>
+  <div class="subtitle">Autoservis • Tuning • Odtahová služba</div>
 </header>
+
+<!-- 🚗 AUTÁ -->
+<div class="car-showcase">
+  <img src="car1.png" alt="auto 1">
+  <img src="car2.png" alt="auto 2">
+  <img src="car3.png" alt="auto 3">
+  <img src="car4.png" alt="auto 4">
+</div>
 
 <div class="container">
 
+  <!-- OPRAVY / TUNING -->
   <div class="card">
-    <h2>🔧 Služby</h2>
-    <ul>
-      <li>Opravy vozidiel všetkých typov</li>
-      <li>Diagnostika a kontrola motora</li>
-      <li>Úpravy a tuning vozidiel</li>
-      <li>Odtahová služba</li>
-      <li>Pravidelný servis a údržba</li>
-    </ul>
+    <h2>🔧 Opravy a Tuning</h2>
+    <p>
+      Poskytujeme kompletné opravy vozidiel, diagnostiku, tuning a servis všetkých typov áut.
+    </p>
   </div>
 
+  <!-- ODŤAHY -->
+  <div class="card">
+    <h2>🚛 Cenník odťahov</h2>
+    <table>
+      <tr><td>Oblasť Paleto</td><td>FREE</td></tr>
+      <tr><td>Oblasť Sandy Shores</td><td>FREE</td></tr>
+      <tr><td>Oblasť Grapeseed</td><td>FREE</td></tr>
+      <tr><td>Oblasť Mesto</td><td>5 000 $</td></tr>
+    </table>
+  </div>
+
+  <!-- O NÁS -->
   <div class="card">
     <h2>🏢 O nás</h2>
+
     <p>
-      Autoservis Doctor Paleto Garage poskytuje profesionálnu starostlivosť o všetky vozidlá.
-      Zameriavame sa na rýchlosť, kvalitu a spoľahlivosť služieb.
+      Sme rodinne založený servis, pomáhame jeden druhému a hlavne pomáhame vám zákazníkom!
+    </p>
+
+    <p>
+      Dielňa Doctor Paleto Garage slúži ako hlavná tuningová stanica na severe mapy.
+      Ide o nezávislú prevádzku, ktorá ponúka rovnaké možnosti úprav ako v celom meste.
+    </p>
+
+    <p>
+      Mechanici vás radi obslúžia, poradia vám a odídete spokojní s úsmevom.
+    </p>
+
+    <p>
+      Neváhajte a zastavte sa.<br><br>
+      S pozdravom,<br>
+      <strong>Doctor Paleto Garage</strong>
     </p>
   </div>
 
+  <!-- KONTAKT / FORM -->
   <div class="card">
     <h2>📋 Objednávky</h2>
-    <p>
-      Pre objednanie služby alebo servisného zásahu použite online formulár.
-      Náš tím vás bude kontaktovať čo najskôr.
-    </p>
-
-    <a class="button" href="https://TVOJ-FORMULAR-LINK.com">
-      Otvoriť formulár
-    </a>
+    <p>Objednávky riešime priamo na mieste alebo cez formulár.</p>
   </div>
 
 </div>
-
-<footer>
-  © Doctor Paleto Garage
-</footer>
 
 </body>
 </html>
