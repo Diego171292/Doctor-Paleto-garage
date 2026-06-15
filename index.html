@@ -4,12 +4,15 @@
 <meta charset="UTF-8">
 <title>Doctor Paleto Garage</title>
 
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background: #0b0b0b;
   color: #f5c400;
+  font-family: "Roboto", sans-serif;
 }
 
 /* HEADER */
@@ -21,17 +24,22 @@ header {
 }
 
 header img {
-  width: 150px;
+  width: 140px;
+  filter: drop-shadow(0 0 10px #f5c400);
 }
 
 h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
   margin: 10px 0 5px;
-  font-size: 36px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .subtitle {
   color: #aaa;
   font-size: 14px;
+  letter-spacing: 1px;
 }
 
 /* AUTÁ */
@@ -58,18 +66,40 @@ h1 {
   padding: 20px;
 }
 
+/* KARTY */
 .card {
   background: #141414;
-  border-left: 4px solid #f5c400;
+  border-left: 5px solid #f5c400;
   padding: 20px;
   margin: 20px 0;
   border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
 }
 
+/* NADPISY */
 h2 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   margin-top: 0;
 }
 
+/* ZVÝRAZNENIE TEXTU */
+.highlight {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* LIST */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+/* TABLE */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -80,8 +110,25 @@ td {
   border-bottom: 1px solid #333;
 }
 
+/* TEXT */
 p {
-  line-height: 1.6;
+  line-height: 1.7;
+  color: #ddd;
+}
+
+strong {
+  color: #fff;
+}
+
+/* SMALL DETAIL */
+.badge {
+  display: inline-block;
+  background: #f5c400;
+  color: #000;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
 }
 </style>
 </head>
@@ -104,13 +151,13 @@ p {
 
 <div class="container">
 
-  <!-- OPRAVY + TUNING -->
+  <!-- CENNÍK -->
   <div class="card">
-    <h2>🔧 Cenník</h2>
+    <h2>🔧 Cenník služieb</h2>
     <ul>
-      <li>🛞 Kolesá – 4 000 $</li>
-      <li>🚪 Dvere – 4 000 $</li>
-      <li>🧰 Fixboxy – 5 000 $</li>
+      <li><span class="highlight">🛞 Kolesá</span> – 4 000 $</li>
+      <li><span class="highlight">🚪 Dvere</span> – 4 000 $</li>
+      <li><span class="highlight">🧰 Fixboxy</span> – 5 000 $</li>
     </ul>
   </div>
 
@@ -118,10 +165,10 @@ p {
   <div class="card">
     <h2>🚛 Cenník odťahov</h2>
     <table>
-      <tr><td>Oblasť Paleto</td><td>FREE</td></tr>
-      <tr><td>Oblasť Sandy Shores</td><td>FREE</td></tr>
-      <tr><td>Oblasť Grapeseed</td><td>FREE</td></tr>
-      <tr><td>Oblasť Mesto</td><td>5 000 $</td></tr>
+      <tr><td>Oblasť Paleto</td><td><strong>FREE</strong></td></tr>
+      <tr><td>Oblasť Sandy Shores</td><td><strong>FREE</strong></td></tr>
+      <tr><td>Oblasť Grapeseed</td><td><strong>FREE</strong></td></tr>
+      <tr><td>Oblasť Mesto</td><td><strong>5 000 $</strong></td></tr>
     </table>
   </div>
 
@@ -129,26 +176,27 @@ p {
   <div class="card">
     <h2>⏰ Otváracia doba</h2>
     <p>
-      Neexistuje ! Vieš prečo ? Lebo, keď sme open tak sme open !<br><br>
-      A keď nie, tak zavolaj a my s radosťou príjdeme.
+      <span class="badge">INFO</span><br><br>
+      Neexistuje! Vieš prečo? Lebo keď sme <strong>OPEN</strong>, tak sme OPEN!<br><br>
+      A keď nie, zavolaj nám a prídeme s radosťou.
     </p>
   </div>
 
-  <!-- O NÁS + INFO -->
+  <!-- O NÁS -->
   <div class="card">
     <h2>🏢 O nás</h2>
 
     <p>
-      Sme rodinne založený servis, pomáhame jeden druhému a hlavne pomáhame vám zákazníkom!
+      <strong>Doctor Paleto Garage</strong> je rodinne založený servis, kde si navzájom pomáhame a hlavne pomáhame vám – zákazníkom.
     </p>
 
     <p>
-      Dielňa Doctor Paleto Garage slúži ako hlavná tuningová stanica na severe mapy.
-      Ide o nezávislú prevádzku, ktorá ponúka rovnaké možnosti úprav ako v celom meste.
+      Dielňa slúži ako hlavná <strong>tuningová stanica na severe mapy</strong>.
+      Ide o nezávislú prevádzku s rovnakými možnosťami úprav ako v meste.
     </p>
 
     <p>
-      Mechanici vás radi obslúžia, poradia vám a odídete spokojní.
+      Mechanici vás radi obslúžia, poradia a odídete vždy s lepšou náladou.
     </p>
 
     <p>
